@@ -1,0 +1,41 @@
+name: Flutter
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  flutter_job:
+    runs-on: macos-latest
+
+    steps:
+      # Step 1: Clone do projeto
+      - uses: actions/checkout@v4
+
+      # Step 2: Instalação flutter
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+      # Step 3: Dependências
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Step 4: Formatação do código
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      # Step 5: Análise estática
+      - name: Analyze project source
+        run: flutter analyze
+
+      # Step 6: Testes unitários
+      - name: Run tests
+        run: flutter test
+
+      # Step 7: Gerar build
+      - name: Build appbundle
+        run: flutter build appbundle
