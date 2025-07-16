@@ -4,7 +4,7 @@ import 'package:myapp/config.dart';
 class BMIController extends ChangeNotifier {
   String _bmi = results[0];
   double _bmiValue = 0.0;
-  
+
   String get bmi => _bmi;
   double get bmiValue => _bmiValue;
 
@@ -25,7 +25,7 @@ class BMIController extends ChangeNotifier {
 
     notifyListeners();
   }
-  
+
   String getBMIDescription() {
     switch (_bmi) {
       case "THINESS":
@@ -42,7 +42,7 @@ class BMIController extends ChangeNotifier {
         return "Enter your data to calculate your BMI.";
     }
   }
-  
+
   Color getBMIColor() {
     switch (_bmi) {
       case "THINESS":
@@ -60,4 +60,3 @@ class BMIController extends ChangeNotifier {
     }
   }
 }
-

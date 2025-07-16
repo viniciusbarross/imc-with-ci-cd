@@ -33,7 +33,9 @@ class ResultBMI extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: bmiController.getBMIColor().withAlpha((255 * 0.1).round()),
+                    color: bmiController
+                        .getBMIColor()
+                        .withAlpha((255 * 0.1).round()),
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
                       color: bmiController.getBMIColor(),
@@ -124,4 +126,3 @@ class ResultBMI extends StatelessWidget {
     );
   }
 }
-

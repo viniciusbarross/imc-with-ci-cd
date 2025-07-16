@@ -38,17 +38,18 @@ class InsertData extends StatelessWidget {
               const SizedBox(height: 30),
               TextFormField(
                 controller: _weightController,
-                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please, enter the weight!";
                   }
-                  
+
                   final weight = double.tryParse(value);
                   if (weight == null) {
                     return "Please enter a valid number!";
                   }
-                  
+
                   if (weight <= 0 || weight > 500) {
                     return "Please enter a valid weight (1-500 kg)!";
                   }
@@ -64,17 +65,18 @@ class InsertData extends StatelessWidget {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _heightController,
-                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please, enter the height!";
                   }
-                  
+
                   final height = double.tryParse(value);
                   if (height == null) {
                     return "Please enter a valid number!";
                   }
-                  
+
                   if (height <= 0 || height > 3.0) {
                     return "Please enter a valid height (0.1-3.0 m)!";
                   }
@@ -128,4 +130,3 @@ class InsertData extends StatelessWidget {
     );
   }
 }
-
